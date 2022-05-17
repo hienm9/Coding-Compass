@@ -6,11 +6,11 @@ const Comment = require('./Comment');
 
 // create associations
 User.hasMany(Rating, {
-  foreignKey: 'user_id'
+  foreignKey: 'user_id',
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
   });
 
 User.belongsToMany(Bootcamp, {
@@ -28,19 +28,19 @@ User.belongsToMany(Bootcamp, {
   });
 
 Bootcamp.hasMany(Comment, {
-    foreignKey: 'bootcamp_id'
+    foreignKey: 'bootcamp_id',
   });
 
 Bootcamp.hasMany(Rating, {
-    foreignKey: 'bootcamp_id'
+    foreignKey: 'bootcamp_id',
   });
 
-Bootcamp.belongsToMany(User, {
-    through: Comment,
-    as: 'bootcamp_comment',
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-  });
+// Bootcamp.belongsToMany(User, {
+//     through: Comment,
+//     as: 'bootcamp_comment',
+//     foreignKey: 'user_id',
+//     onDelete: 'SET NULL'
+//   });
 
 Bootcamp.belongsToMany(User, {
     through: Rating,
@@ -49,21 +49,21 @@ Bootcamp.belongsToMany(User, {
     onDelete: 'SET NULL'
   });
 
-Comment.belongsTo(Bootcamp, {
-    foreignKey: 'bootcamp_id'
-  });
+// Comment.belongsTo(Bootcamp, {
+//     foreignKey: 'bootcamp_id',
+//   });
 
-Comment.belongsTo(User, {
-    foreignKey: 'user_id'
-  });
+// Comment.belongsTo(User, {
+//     foreignKey: 'user_id',
+//   });
 
 
 Rating.belongsTo(Bootcamp, {
-    foreignKey: 'bootcamp_id'
+    foreignKey: 'bootcamp_id',
   });
 
 Rating.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
   });
 
 module.exports = { User, Rating, Bootcamp, Comment };
