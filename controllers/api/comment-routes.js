@@ -17,8 +17,8 @@ router.post('/', withAuth, (req, res) => {
   // expects => {comment_text: "This is the comment", user_id: 1, bootcamp_id: 2}
   Comment.create({
     comment_text: req.body.comment_text,
-    // user_id: req.session.user_id,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
+    // user_id: req.body.user_id,
     bootcamp_id: req.body.bootcamp_id
   })
     .then(dbCommentData => res.json(dbCommentData))
