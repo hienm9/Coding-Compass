@@ -19,6 +19,13 @@ class Bootcamp extends Model {
         type: DataTypes.STRING,
         allowNull: false
       },
+      bootcamp_url: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          isURL: true
+        }
+      },
       info: {
         type: DataTypes.STRING,
         allowNull: false,
