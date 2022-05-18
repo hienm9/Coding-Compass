@@ -3,7 +3,7 @@ const { Rating } = require('../models');
 const ratingdata = [
   {
     rating: '2',
-    user_id: 6,
+    user_id: 5,
     bootcamp_id: 1
   },
   {

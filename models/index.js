@@ -13,19 +13,20 @@ User.hasMany(Comment, {
     foreignKey: 'user_id',
   });
 
-User.belongsToMany(Bootcamp, {
-  through: Rating,
-  as: 'bootcamp_rating',
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
+// User.belongsToMany(Bootcamp, {
+//   through: Rating,
+//   as: 'bootcamp_rating',
+//   foreignKey: 'user_id',
+//   onDelete: 'SET NULL'
+// });
 
-User.belongsToMany(Bootcamp, {
-    through: Comment,
-    as: 'bootcamp_comment',
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-  });
+// User.belongsToMany(Bootcamp, {
+//     through: Comment,
+//     as: 'bootcamp_comment',
+//     foreignKey: {name: 'user_id', unique: false},
+//     unique: false,
+//     onDelete: 'SET NULL'
+//   });
 
 Bootcamp.hasMany(Comment, {
     foreignKey: 'bootcamp_id',
@@ -38,32 +39,32 @@ Bootcamp.hasMany(Rating, {
 // Bootcamp.belongsToMany(User, {
 //     through: Comment,
 //     as: 'bootcamp_comment',
-//     foreignKey: 'user_id',
+//     foreignKey: {name: 'bootcamp_id', unique: false},
+//     unique: false,
 //     onDelete: 'SET NULL'
 //   });
 
-Bootcamp.belongsToMany(User, {
-    through: Rating,
-    as: 'bootcamp_rating',
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
+// Bootcamp.belongsToMany(User, {
+//     through: Rating,
+//     as: 'bootcamp_rating',
+//     foreignKey: 'bootcamp_id',
+//     onDelete: 'SET NULL'
+//   });
+
+Comment.belongsTo(Bootcamp, {
+    foreignKey: {name: 'bootcamp_id', unique: false}
   });
 
-// Comment.belongsTo(Bootcamp, {
-//     foreignKey: 'bootcamp_id',
-//   });
-
-// Comment.belongsTo(User, {
-//     foreignKey: 'user_id',
-//   });
-
+Comment.belongsTo(User, {
+    foreignKey: {name: 'user_id', unique: false}
+  });
 
 Rating.belongsTo(Bootcamp, {
-    foreignKey: 'bootcamp_id',
+    foreignKey: {name: 'bootcamp_id', unique: false}
   });
 
 Rating.belongsTo(User, {
-    foreignKey: 'user_id',
+    foreignKey: {name: 'user_id', unique: false}
   });
 
 module.exports = { User, Rating, Bootcamp, Comment };
