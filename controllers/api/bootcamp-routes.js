@@ -4,7 +4,7 @@ const { User, Rating, Bootcamp, Comment } = require("../../models");
 // get all bootcamps
 router.get("/", (req, res) => {
   Bootcamp.findAll({
-    attributes: ["id", "name", "info"]
+    attributes: ["id", "name", "bootcamp_url", "info"]
   })
     .then(dbBootcampData => res.json(dbBootcampData))
     .catch(err => {
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
 // get one bootcamp
 router.get("/:id", (req, res) => {
   Bootcamp.findOne({
-    attributes: ["id", "name", "info"],
+    attributes: ["id", "name", "bootcamp_url", "info"],
     where: {
       id: req.params.id
     },
