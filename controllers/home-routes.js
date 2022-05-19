@@ -2,9 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Bootcamp, User, Comment, Rating } = require('../models');
 
-router.get("/",(req, res)=>{
-  res.render("homepage")
-});
+// router.get("/",(req, res)=>{
+//   res.render("homepage")
+// });
 router.get("/account",(req, res)=>{
   res.render("account")
 });
@@ -14,6 +14,36 @@ router.get("/account",(req, res)=>{
 // router.get("/single-bootcamp",(req, res)=>{
 //   res.render("single-bootcamp")
 // });
+
+// filter
+router.get('/results', (req, res) => {
+  Bootcamp.findAll({
+    // where: {
+    // schoolname: req.body.schoolname || "OSU"
+    // },
+    attributes: [
+      'id',
+      'name',
+      'info',
+      'bootcamp_url',
+    ],
+  })
+    .then(dbBootcampData => {
+      const search = req.body.name || "cod"  // the || and "cod" were put in for testing the search work. 
+      const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true })).filter(bootcamp => {
+        return bootcamp.name.toLowerCase().includes(search.toLowerCase())
+      })
+      console.log(bootcamps);
+      res.render('results', {
+        bootcamps,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 // get all posts for homepage
 router.get('/', (req, res) => {
