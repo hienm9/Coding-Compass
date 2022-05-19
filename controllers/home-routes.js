@@ -68,6 +68,10 @@ router.get('/', (req, res) => {
       });
   });
 
+  router.get('/sign-up', (req, res) => {
+    res.render('sign-up');
+  });
+
   // get single post
 router.get('/bootcamp/:id', (req, res) => {
     Bootcamp.findOne({
