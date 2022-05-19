@@ -1,0 +1,9 @@
+
+
+.body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-image:url(https://cdn.shortpixel.ai/spai/w_723+q_lossy+ret_img+to_webp/https://computersciencehero.com/wp-content/uploads/2021/08/Getting-a-Job-After-a-Coding-Bootcamp.jpeg);
+}
