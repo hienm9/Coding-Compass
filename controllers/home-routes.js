@@ -29,8 +29,7 @@ router.get('/results', (req, res) => {
     ],
   })
     .then(dbBootcampData => {
-      // const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true }));
-      const search = req.body.name || "cod"
+      const search = req.body.name || "cod"  // the || and "cod" were put in for testing the search work. 
       const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true })).filter(bootcamp => {
         return bootcamp.name.toLowerCase().includes(search.toLowerCase())
       })
