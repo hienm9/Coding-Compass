@@ -1,23 +1,20 @@
 async function searchHandler(event) {
     event.preventDefault();
   
-    const searchTerm = document.querySelector(".searchInput").value.trim();
-    
-    const response = await fetch('/results', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: searchTerm
-      }),
+    const query = document.querySelector(".searchInput").value.trim();
+
+    const response = await fetch('/results/' + query, {
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       }
     });
   
     if (response.ok) {
-      document.location.replace("/results");
+      document.location.replace("/results/" + query);
     } else {
       alert(response.statusText);
     }
   }
   
-  document.querySelector('#submit-btn').addEventListener('click', searchHandler);
+  document.querySelector('#submit-btn').addEventListener('submit', searchHandler);

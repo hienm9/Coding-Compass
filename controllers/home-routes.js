@@ -2,9 +2,9 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Bootcamp, User, Comment, Rating } = require('../models');
 
-// router.get("/",(req, res)=>{
-//   res.render("homepage")
-// });
+router.get("/",(req, res)=>{
+  res.render("homepage")
+});
 router.get("/account",(req, res)=>{
   res.render("account")
 });
@@ -16,34 +16,34 @@ router.get("/account",(req, res)=>{
 // });
 
 // filter
-router.get('/results', (req, res) => {
-  Bootcamp.findAll({
-    // where: {
-    // schoolname: req.body.schoolname || "OSU"
-    // },
-    attributes: [
-      'id',
-      'name',
-      'info',
-      'bootcamp_url',
-    ],
-  })
-    .then(dbBootcampData => {
-      const search = req.body.name || "cod"  // the || and "cod" were put in for testing the search work. 
-      const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true })).filter(bootcamp => {
-        return bootcamp.name.toLowerCase().includes(search.toLowerCase())
-      })
-      console.log(bootcamps);
-      res.render('results', {
-        bootcamps,
-        loggedIn: req.session.loggedIn
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+// router.get('/results', (req, res) => {
+//   Bootcamp.findAll({
+//     // where: {
+//     // schoolname: req.body.schoolname || "OSU"
+//     // },
+//     attributes: [
+//       'id',
+//       'name',
+//       'info',
+//       'bootcamp_url',
+//     ],
+//   })
+//     .then(dbBootcampData => {
+//       const search = req.body.name // the || and "cod" were put in for testing the search work. 
+//       const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true })).filter(bootcamp => {
+//         return bootcamp.name.toLowerCase().includes(search.toLowerCase())
+//       })
+//       console.log(bootcamps);
+//       res.render('results', {
+//         bootcamps,
+//         loggedIn: req.session.loggedIn
+//       });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 router.get('/results/:query', (req, res) => {
   Bootcamp.findAll({
@@ -62,7 +62,7 @@ router.get('/results/:query', (req, res) => {
       const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true })).filter(bootcamp => {
         return bootcamp.name.toLowerCase().includes(search.toLowerCase())
       })
-      console.log(bootcamps);
+      // console.log(bootcamps);
       res.render('results', {
         bootcamps,
         loggedIn: req.session.loggedIn
@@ -74,19 +74,19 @@ router.get('/results/:query', (req, res) => {
     });
 });
 
-// get all posts for homepage
-router.get('/', (req, res) => {
+router.get('/results', (req, res) => {
     Bootcamp.findAll({
       attributes: [
         'id',
         'name',
         'info',
+        'bootcamp_url'
     ],
     })
       .then(dbBootcampData => {
         const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true }));
   
-        res.render('homepage', {
+        res.render('results', {
           bootcamps,
           loggedIn: req.session.loggedIn
         });
