@@ -47,9 +47,6 @@ router.get("/account",(req, res)=>{
 
 router.get('/results/:query', (req, res) => {
   Bootcamp.findAll({
-    // where: {
-    // schoolname: req.body.schoolname || "OSU"
-    // },
     attributes: [
       'id',
       'name',
@@ -58,7 +55,7 @@ router.get('/results/:query', (req, res) => {
     ],
   })
     .then(dbBootcampData => {
-      const search = req.params.query   // the || and "cod" were put in for testing the search work. 
+      const search = req.params.query
       const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true })).filter(bootcamp => {
         return bootcamp.name.toLowerCase().includes(search.toLowerCase())
       })
