@@ -20,4 +20,4 @@ async function searchHandler(event) {
     }
   }
   
-  document.querySelector('#submit-btn').addEventListener('click', searchHandler);
+  document.querySelector('#submit-btn').addEventListener('submit', searchHandler);
