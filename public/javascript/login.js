@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
@@ -29,6 +29,11 @@ async function loginFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
+// if(username && email && password){
+//   console.log("registering user", {username, email, password})
+//   document.location.replace("/homepage")
+// }
+
     if (username && email && password) {
       const response = await fetch('/api/users', {
         method: 'post',
@@ -41,13 +46,13 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/login');
       } else {
         alert(response.statusText);
       }
     }
   }
   
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+  document.querySelector('.login-form')?.addEventListener('submit', loginFormHandler);
   
-  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+  document.querySelector('.signup-form')?.addEventListener('submit', signupFormHandler);
