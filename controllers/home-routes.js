@@ -158,6 +158,12 @@ router.get('/bootcamp/:id', (req, res) => {
   
     res.render('login');
   });
+
+  router.get('/logout', (req, res) => {
+    req.session.loggedIn = false
+  
+    res.render('login');
+  });
   
   module.exports = router;
   
