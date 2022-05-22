@@ -1,5 +1,12 @@
 <h1>I'm the results page</h1>
 {{#each bootcamps as |bootcamp|}}
-<h1>{{bootcamp.name}}</h1>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{location}}</h6>
+        <p class="card-text">{{info}}</p>
+        <a href="/bootcamp/{{id}}" class="stretched-link">Goes to single bootcamp page</a>
+        <a href="{{bootcamp_url}}" class="card-link">Visit bootcamp website</a>
+      </div>
+    </div>
 {{/each}}
-

@@ -78,9 +78,7 @@
         {{{body}}}
       </div>
 
-      {{!-- {{#if loggedIn}}
-      <script src="/javascript/logout.js"></script>
-    {{/if}} --}}
+      
       <footer class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">Coding-Compass</a>
         <button
@@ -106,6 +104,9 @@
         </div>
       </footer>
     </main>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
     <script src="/javascript/search.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
