@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Rating } = require('../../models');
+const { Rating, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //get all ratings
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 //create rating
 router.post('/', withAuth, (req, res) => {
   Rating.create({
-    rating: req.body.rating,
+    rating_num: req.body.rating,
     user_id: req.session.user_id,
     bootcamp_id: req.body.bootcamp_id
   })
