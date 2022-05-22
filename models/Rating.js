@@ -11,7 +11,7 @@ Rating.init(
       primaryKey: true,
       autoIncrement: true
     },
-    rating: {  
+    rating_num: {  
       type: DataTypes.INTEGER,
       allowNull: false,
     },
