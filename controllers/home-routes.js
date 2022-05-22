@@ -52,7 +52,8 @@ router.get('/results/:query', (req, res) => {
       'name',
       'info',
       'bootcamp_url',
-    ],
+      'location'
+    ]
   })
     .then(dbBootcampData => {
       const search = req.params.query
@@ -77,8 +78,9 @@ router.get('/results', (req, res) => {
         'id',
         'name',
         'info',
-        'bootcamp_url'
-    ],
+        'bootcamp_url',
+        'location'
+    ]
     })
       .then(dbBootcampData => {
         const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true }));
@@ -108,6 +110,9 @@ router.get('/bootcamp/:id', (req, res) => {
         'id',
         'name',
         'info',
+        'bootcamp_url',
+        'courses',
+        'location'
       ],
       include: [
         {
