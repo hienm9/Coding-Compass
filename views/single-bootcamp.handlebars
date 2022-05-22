@@ -1,1 +1,28 @@
 <h1>I'm the single-bootcamp page</h1>
+<h5 class="card-title">{{bootcamp.name}}</h5>
+<p class="card-text">{{bootcamp.info}}</p>
+
+{{#each bootcamp.ratings as |rating|}}
+<div class="border">
+  <p>{{rating}}</p>
+  <p>Rated by: {{user.username}}</p>
+</div>
+{{/each}}
+
+{{#each bootcamp.comments as |comment|}}
+<div class="border">
+  <p>{{comment_text}}</p>
+  <p>Posted by: {{user.username}}</p>
+</div>
+{{/each}}
+
+{{#if loggedIn}}
+  <form class="form-group comment-form">
+    <label for="comment">Comment:</label>
+    <textarea name="comment-body" class="form-control" rows="5" id="comment"></textarea>
+    <button type="submit" class="btn btn-primary">Post</button>
+    {{!-- <button type="submit" class="btn btn-primary">Edit</button> --}}
+  </form>
+{{/if}}
+
+<script src="/javascript/comment.js"></script>
