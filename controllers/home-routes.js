@@ -18,9 +18,6 @@ router.get("/account",(req, res)=>{
 // filter
 router.get('/results', (req, res) => {
   Bootcamp.findAll({
-    // where: {
-    // schoolname: req.body.schoolname || "OSU"
-    // },
     attributes: [
       'id',
       'name',
@@ -29,15 +26,21 @@ router.get('/results', (req, res) => {
     ],
   })
     .then(dbBootcampData => {
-      const search = req.body.name || "cod"  // the || and "cod" were put in for testing the search work. 
-      const bootcamps = dbBootcampData.map(bootcamp => bootcamp.get({ plain: true })).filter(bootcamp => {
-        return bootcamp.name.toLowerCase().includes(search.toLowerCase())
+
+      console.log(req)
+      const search = req.name // the || and "cod" were put in for testing the search work. 
+      console.log(search);
+      console.log(dbBootcampData);
+      const bootcamps = dbBootcampData.map((bootcamp) => bootcamp.get({ plain: true }));      
+      const searchMatch = bootcamps.filter(bootcamp => {
+        return bootcamp.name.includes(search)    
       })
-      console.log(bootcamps);
+      // console.log(bootcamps);
       res.render('results', {
-        bootcamps,
+        // bootcamps,
+        searchMatch,
         loggedIn: req.session.loggedIn
-      });
+      })
     })
     .catch(err => {
       console.log(err);
@@ -47,9 +50,6 @@ router.get('/results', (req, res) => {
 
 router.get('/results/:query', (req, res) => {
   Bootcamp.findAll({
-    // where: {
-    // schoolname: req.body.schoolname || "OSU"
-    // },
     attributes: [
       'id',
       'name',
