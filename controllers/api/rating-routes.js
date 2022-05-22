@@ -4,15 +4,7 @@ const withAuth = require('../../utils/auth');
 
 //get all ratings
 router.get('/', (req, res) => {
-  Rating.findAll({
-    attributes: ["id", "rating", "user_id", "bootcamp_id"],
-    include: [
-      {
-        model: User,
-        attributes: ["username"]
-      }
-    ]
-  })
+  Rating.findAll()
     .then(dbRatingData => res.json(dbRatingData))
     .catch(err => {
       console.log(err);
