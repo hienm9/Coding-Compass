@@ -125,7 +125,7 @@ router.get('/bootcamp/:id', (req, res) => {
         },
         {
           model: Rating,
-          attributes: ['id', 'rating', 'user_id', 'created_at'],
+          attributes: ['id', 'rating_num', 'user_id', 'created_at'],
           include: {
               model: User,
               attributes: ['username']
