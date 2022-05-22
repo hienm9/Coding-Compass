@@ -19,7 +19,7 @@ router.get('/user/:id', withAuth, (req, res) => {
     if (dbUserData) {
       const user = dbUserData.get({ plain: true });
       
-      res.render('edit-user', {
+      res.render('account', {
         user,
         loggedIn: true
       });
