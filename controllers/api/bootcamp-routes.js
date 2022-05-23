@@ -27,7 +27,7 @@ router.get("/:id", (req, res) => {
       "info",
       [
         sequelize.literal(
-          "(SELECT AVG(rating) FROM rating WHERE rating.bootcamp_id = bootcamp.id)"
+          "(SELECT AVG(rating_num) FROM rating WHERE rating.bootcamp_id = bootcamp.id)"
         ),
         "rating_avg",
       ],
