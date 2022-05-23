@@ -2,11 +2,19 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Bootcamp, User, Comment, Rating } = require("../models");
 
-router.get("/", (req, res) => {
-  res.render("homepage");
+router.get("/",(req, res)=>{
+  res.render('homepage', {
+    loggedIn: req.session.loggedIn
+  });
 });
-router.get("/account", (req, res) => {
-  res.render("account");
+
+router.get("/account",(req, res)=>{
+  if (req.session.loggedIn) {
+    res.render('account');
+    return;
+  }
+
+  res.render('login');
 });
 // router.get("/results",(req, res)=>{
 //   res.render("results")

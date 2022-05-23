@@ -39,13 +39,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="/results">Bootcamps</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/sign-up">Sign Up</a>
+              </li>
               {{#if loggedIn}}
               <li class="nav-item">
                 <a class="nav-link" href="/" id="logout-link">Logout</a>
               </li>
               {{else}}
               <li class="nav-item">
-                <a class="nav-link" href="/">Login</a>
+                <a class="nav-link" href="/login">Login</a>
               </li>
               {{/if}}
             </ul>
@@ -93,6 +96,8 @@
     </main>
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
+    {{else}}
+      <script src="/javascript/login.js"></script>
     {{/if}}
     <script src="/javascript/search.js"></script>
     <script

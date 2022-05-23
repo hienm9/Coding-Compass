@@ -1,32 +1,38 @@
 <h1>I'm the single-bootcamp page</h1>
+
 <div class="card mb-3">
   <div class="card-body">
-    <h5 class="card-title">{{bootcamp.name}}</h5>
+    <h5 class="card-title">
+      {{bootcamp.name}}
+      <div class="rating-avg d-inline" data-score="{{bootcamp.rating_avg}}"></div>
+      <div class="rating-target d-inline align-middle">{{bootcamp.rating_avg}}</div>
+    </h5>
+    <p>{{bootcamp.location}}</p>
+    <h6>About:</h6>
     <p class="card-text">{{bootcamp.info}}</p>
-    <div class="rating-avg d-inline" data-score="{{bootcamp.rating_avg}}"></div>
-    <div class="rating-target d-inline align-middle">{{bootcamp.rating_avg}}</div>
+    <h6>Courses offered:</h6>
+    <p>{{bootcamp.courses}}</p>
   </div>
 </div>
 
 {{#each bootcamp.ratings as |rating|}}
-<div class="border">
-  <p>{{rating_num}}</p>
+<div class="border mb-3">
+  {{{displayStars rating_num}}}
   <p>Rated by: {{user.username}}</p>
 </div>
 {{/each}}
 
 {{#each bootcamp.comments as |comment|}}
-  <div class="border">
+  <div class="border mb-3">
     <p>{{comment_text}}</p>
     <p>Posted by: {{user.username}}</p>
   </div>
 {{/each}}
 
 {{#if loggedIn}}
-  <div class="my-2">
-    <p class="mb-2">Rate this bootcamp:</p>
-    <div class="rating"></div>
-  </div>
+<div>{{> rating }}</div>
+
+<div>
   <form class="form-group comment-form">
     <label for="comment">Comment:</label>
     <textarea
@@ -38,8 +44,11 @@
     <button type="submit" class="btn btn-primary">Post</button>
     {{! <button type="submit" class="btn btn-primary">Edit</button> }}
   </form>
+</div>
+{{else}}
+<button class="btn btn-primary" href="/login">Login to rate or comment</button>
 
-  <script src="/javascript/comment.js"></script>
+<script src="/javascript/comment.js"></script>
 {{/if}}
 <h3>Need a button to login to add a comment</h3>
 <script src="/javascript/comment.js"></script>
