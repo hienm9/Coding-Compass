@@ -1,23 +1,32 @@
 <h1>I'm the single-bootcamp page</h1>
-<h5>{{bootcamp.name}}</h5>
-<p>{{bootcamp.location}}</p><br />
-<h6>About:</h6>
-<p>{{bootcamp.info}}</p><br />
-<h6>Courses offered:</h6>
-<p>{{bootcamp.courses}}</p><br />
+
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">
+      {{bootcamp.name}}
+      <div class="rating-avg d-inline" data-score="{{bootcamp.rating_avg}}"></div>
+      <div class="rating-target d-inline align-middle">{{bootcamp.rating_avg}}</div>
+    </h5>
+    <p>{{bootcamp.location}}</p>
+    <h6>About:</h6>
+    <p class="card-text">{{bootcamp.info}}</p>
+    <h6>Courses offered:</h6>
+    <p>{{bootcamp.courses}}</p>
+  </div>
+</div>
 
 {{#each bootcamp.ratings as |rating|}}
-<div class="border">
+<div class="border mb-3">
   {{{displayStars rating_num}}}
   <p>Rated by: {{user.username}}</p>
 </div>
 {{/each}}
 
 {{#each bootcamp.comments as |comment|}}
-<div class="border">
-  <p>{{comment_text}}</p>
-  <p>Posted by: {{user.username}}</p>
-</div>
+  <div class="border mb-3">
+    <p>{{comment_text}}</p>
+    <p>Posted by: {{user.username}}</p>
+  </div>
 {{/each}}
 
 {{#if loggedIn}}
@@ -26,13 +35,23 @@
 <div>
   <form class="form-group comment-form">
     <label for="comment">Comment:</label>
-    <textarea name="comment-body" class="form-control" rows="5" id="comment"></textarea>
+    <textarea
+      name="comment-body"
+      class="form-control"
+      rows="5"
+      id="comment"
+    ></textarea>
     <button type="submit" class="btn btn-primary">Post</button>
-    {{!-- <button type="submit" class="btn btn-primary">Edit</button> --}}
+    {{! <button type="submit" class="btn btn-primary">Edit</button> }}
   </form>
 </div>
 {{else}}
 <button class="btn btn-primary" href="/login">Login to rate or comment</button>
-{{/if}}
 
 <script src="/javascript/comment.js"></script>
+{{/if}}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" integrity="sha512-USPCA7jmJHlCNRSFwUFq3lAm9SaOjwG8TaB8riqx3i/dAJqhaYilVnaf2eVUH5zjq89BU6YguUuAno+jpRvUqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascript/jquery.raty.js"></script>
+<script src="/javascript/rating.js"></script>
