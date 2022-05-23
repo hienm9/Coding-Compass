@@ -9,7 +9,7 @@ const ratingRoutes = require("./rating-routes.js");
 router.use("/users", userRoutes);
 router.use("/bootcamps", bootcampRoutes);
 router.use("/comments", commentRoutes);
-router.use("/ratings", ratingRoutes);
+router.use("/rating", ratingRoutes);
 
 
 
