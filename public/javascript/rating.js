@@ -1,7 +1,7 @@
 $(".rating").raty({
   click: async function (score, evt) {
     evt.preventDefault();
-    console.log(score);
+    // console.log(score);
 
     const rating_num = score;
     const bootcamp_id = window.location.toString().split('/')[
@@ -18,7 +18,7 @@ $(".rating").raty({
     });
 
     if (response.ok) {
-      document.location.replace('/results/');
+      document.location.reload();
     } else {
       alert(response.statusText);
     }

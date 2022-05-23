@@ -8,7 +8,7 @@
 
 {{#each bootcamp.ratings as |rating|}}
 <div class="border">
-  <p>{{rating_num}} stars</p>
+  {{{displayStars rating_num}}}
   <p>Rated by: {{user.username}}</p>
 </div>
 {{/each}}
