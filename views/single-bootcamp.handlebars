@@ -1,10 +1,14 @@
 <h1>I'm the single-bootcamp page</h1>
-<h5 class="card-title">{{bootcamp.name}}</h5>
-<p class="card-text">{{bootcamp.info}}</p>
+<h5>{{bootcamp.name}}</h5>
+<p>{{bootcamp.location}}</p><br />
+<h6>About:</h6>
+<p>{{bootcamp.info}}</p><br />
+<h6>Courses offered:</h6>
+<p>{{bootcamp.courses}}</p><br />
 
 {{#each bootcamp.ratings as |rating|}}
 <div class="border">
-  <p>{{rating_num}}</p>
+  <p>{{rating_num}} stars</p>
   <p>Rated by: {{user.username}}</p>
 </div>
 {{/each}}
@@ -17,12 +21,16 @@
 {{/each}}
 
 {{#if loggedIn}}
+<div>{{> rating }}</div>
+
+<div>
   <form class="form-group comment-form">
     <label for="comment">Comment:</label>
     <textarea name="comment-body" class="form-control" rows="5" id="comment"></textarea>
     <button type="submit" class="btn btn-primary">Post</button>
     {{!-- <button type="submit" class="btn btn-primary">Edit</button> --}}
   </form>
+</div>
 {{/if}}
 
 <script src="/javascript/comment.js"></script>

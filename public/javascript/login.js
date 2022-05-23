@@ -20,6 +20,9 @@ async function loginFormHandler(event) {
         alert(response.statusText);
       }
     }
+    else {
+      alert("Please enter your login credentials!")
+    }
   }
 
   

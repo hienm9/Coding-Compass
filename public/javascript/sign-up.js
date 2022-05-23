@@ -23,6 +23,9 @@
         alert(response.statusText);
       }
     }
+    else {
+      alert("Please enter your information!")
+    }
   }
   
   
