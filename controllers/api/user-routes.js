@@ -24,7 +24,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Rating,
-        attributes: ["id", "rating", "created_at"],
+        attributes: ["id", "rating_num", "created_at"],
         include: {
           model: Bootcamp,
           attributes: ["name"]

@@ -1,10 +1,9 @@
-<h1>I'm the single-bootcamp page</h1>
 <h5 class="card-title">{{bootcamp.name}}</h5>
 <p class="card-text">{{bootcamp.info}}</p>
 
 {{#each bootcamp.ratings as |rating|}}
 <div class="border">
-  <p>{{rating}}</p>
+  <p>{{rating_num}}</p>
   <p>Rated by: {{user.username}}</p>
 </div>
 {{/each}}
