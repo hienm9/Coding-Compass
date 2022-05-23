@@ -1,28 +1,48 @@
 <h1>I'm the single-bootcamp page</h1>
-<h5 class="card-title">{{bootcamp.name}}</h5>
-<p class="card-text">{{bootcamp.info}}</p>
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">{{bootcamp.name}}</h5>
+    <p class="card-text">{{bootcamp.info}}</p>
+    <div class="rating-avg d-inline" data-score="{{bootcamp.rating_avg}}"></div>
+    <div class="rating-target d-inline align-middle">{{bootcamp.rating_avg}}</div>
+  </div>
+</div>
 
 {{#each bootcamp.ratings as |rating|}}
-<div class="border">
-  <p>{{rating}}</p>
-  <p>Rated by: {{user.username}}</p>
-</div>
+  <div class="border">
+    <p>{{rating.rating}}</p>
+    <p>Rated by: {{user.username}}</p>
+  </div>
 {{/each}}
 
 {{#each bootcamp.comments as |comment|}}
-<div class="border">
-  <p>{{comment_text}}</p>
-  <p>Posted by: {{user.username}}</p>
-</div>
+  <div class="border">
+    <p>{{comment_text}}</p>
+    <p>Posted by: {{user.username}}</p>
+  </div>
 {{/each}}
 
 {{#if loggedIn}}
+  <div class="my-2">
+    <p class="mb-2">Rate this bootcamp:</p>
+    <div class="rating"></div>
+  </div>
   <form class="form-group comment-form">
     <label for="comment">Comment:</label>
-    <textarea name="comment-body" class="form-control" rows="5" id="comment"></textarea>
+    <textarea
+      name="comment-body"
+      class="form-control"
+      rows="5"
+      id="comment"
+    ></textarea>
     <button type="submit" class="btn btn-primary">Post</button>
-    {{!-- <button type="submit" class="btn btn-primary">Edit</button> --}}
+    {{! <button type="submit" class="btn btn-primary">Edit</button> }}
   </form>
+
+  <script src="/javascript/comment.js"></script>
 {{/if}}
 
-<script src="/javascript/comment.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" integrity="sha512-USPCA7jmJHlCNRSFwUFq3lAm9SaOjwG8TaB8riqx3i/dAJqhaYilVnaf2eVUH5zjq89BU6YguUuAno+jpRvUqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascript/jquery.raty.js"></script>
+<script src="/javascript/rating.js"></script>
