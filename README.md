@@ -8,7 +8,7 @@
 - Node.js
 - Express.js
 - Raty-js
-- Jqwery
+- Jquery
 - Heroku
 
 # Table of Contents
@@ -24,7 +24,7 @@ This is a wesite that is designed to allow you to look up potential Coding bootc
 to compare them with other ones to see which will be the best for you. 
 
 ## Usage
-Follow the link to deploy and interact (Heroku link)
+Follow the link to deploy and interact (https://coding-compass.herokuapp.com/)
 
 ## Installation
 git clone https://github.com/hienm9/Coding-Compass
@@ -43,7 +43,10 @@ git clone https://github.com/hienm9/Coding-Compass
 
 ## Future Development
 - Add more camps and courses to Coding-Compass
-- Add more 
+- Add more sections for coments and courses
+
+
+##### (*Development started in May, 2022*)
 
 
 
