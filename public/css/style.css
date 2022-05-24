@@ -63,7 +63,8 @@ input.searchInput{
 }
 
 .cp-detail-link {
-  color: rgb(41, 154, 41);
+  color: rgb(204, 34, 178);
+  font-weight: bold;
 }
 
 .cp-detail-text {
