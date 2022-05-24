@@ -36,7 +36,8 @@ body {
 }
 
 #header-img {
-  width: 35%;
+  width: 170px;
+  height: 40px;
 }
 
 input.searchInput{
