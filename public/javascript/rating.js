@@ -18,7 +18,7 @@ async function ratingClickHandler(score, event) {
   const response = await fetch("/api/rating", {
     method: "post",
     body: JSON.stringify({
-      rating: score,
+      rating_num: score,
       bootcamp_id: id,
     }),
     headers: {
