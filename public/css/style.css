@@ -72,6 +72,24 @@ input.searchInput{
   color: var(--indigo);
 }
 
+.cp-detail-link {
+  color: rgb(41, 154, 41);
+}
+
+.cp-detail-text {
+  color: #1e2890;
+  font-weight: bold;
+}
+
+.cp-font{
+  font-style: italic;
+  font-size: small;
+}
+
+.cp-font-comment {
+  font-style: italic;
+}
+
 .signup-link{
   margin-top: 1rem;
   font-weight: bold;

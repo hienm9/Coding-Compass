@@ -1,14 +1,15 @@
 <div class="card mb-3">
   <div class="card-body">
-    <h5 class="card-title">
-      {{bootcamp.name}}
+    <h5 class="card-title"> <a href="{{bootcamp_url}}">{{bootcamp.name}}</a>&emsp; 
+    {{!-- <h5 class="card-title">
+      {{bootcamp.name}}&emsp;  --}}
       <div class="rating-avg d-inline" data-score="{{bootcamp.rating_avg}}"></div>
       <div class="rating-target d-inline align-middle">{{bootcamp.rating_avg}}</div>
     </h5>
     <p>{{bootcamp.location}}</p>
-    <h6>About:</h6>
+    <h6 class="cp-detail-text">About:</h6>
     <p class="card-text">{{bootcamp.info}}</p>
-    <h6>Courses offered:</h6>
+    <h6 class="cp-detail-text">Courses offered:</h6>
     <p>{{bootcamp.courses}}</p>
   </div>
 </div>
@@ -22,8 +23,8 @@
 
 {{#each bootcamp.comments as |comment|}}
   <div class="border mb-3">
-    <p>{{comment_text}}</p>
-    <p>Posted by: {{user.username}}</p>
+    <p class="cp-font-comment">{{comment_text}}</p>
+    <p class="cp-font">Posted by: {{user.username}}</p>
   </div>
 {{/each}}
 
