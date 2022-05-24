@@ -13,7 +13,7 @@
     "url": "git+https://github.com/hienm9/Coding-Compass.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "ISC OR Apache-2.0", 
   "bugs": {
     "url": "https://github.com/hienm9/Coding-Compass/issues"
   },
