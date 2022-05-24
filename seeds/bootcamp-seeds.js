@@ -291,13 +291,6 @@ const bootcampdata = [
     location: "Cincinnati",
   },
   {
-    name: "OSU Bootcamp",
-    bootcamp_url: "https://eng-bootcamps.osu.edu/",
-    info: "The Ohio State University College of Engineering offers a 12-week, full-time web development boot camp, and 24-week, part-time web development, cybersecurity, and UX/UI boot camps held online. The full stack curriculum includes HTML, CSS, JavaScript, jQuery, Bootstrap, Express.js, Node.js, databases, MongoDB, MySQL, and Git, with in-person and online options.",
-    courses: "Full Stack Developer,UX Design,Cyber Security",
-    location: "Online",
-  },
-  {
     name: "Prime Digital Academy",
     bootcamp_url: "https://www.primeacademy.io/",
     info: "Prime Digital Academy offers an intensive, 20-week full-stack coding bootcamp and an 18-week UX design bootcamp in Minneapolis, Minnesota. Working directly with Twin Cities tech employers, Prime Digital Academy has created programs that equip emerging engineers and designers with the skills they need to make immediate contributions. Prime students learn modern technologies, practical methodologies, and critical behavioral skills through carefully crafted curriculum and real-world projects for pro-bono clients in the community. Prime's immersive programs empower learners from diverse backgrounds to begin their new careers in months, not years.",
@@ -355,6 +348,13 @@ const bootcampdata = [
     courses: "Full Stack Developer",
     location:
       "Charlotte,Chicago,Cincinnati,Cleveland,Columbus,Dallas,Detroit,Online,Philadelphia,Pittsburgh,Wilmington",
+  },
+  {
+    name: "The Ohio State University Boot Camps",
+    bootcamp_url: "https://eng-bootcamps.osu.edu/",
+    info: "The Ohio State University College of Engineering offers a 12-week, full-time web development boot camp, and 24-week, part-time web development, cybersecurity, and UX/UI boot camps held online. The full stack curriculum includes HTML, CSS, JavaScript, jQuery, Bootstrap, Express.js, Node.js, databases, MongoDB, MySQL, and Git, with in-person and online options.",
+    courses: "Full Stack Developer,UX Design,Cyber Security",
+    location: "Online",
   },
   {
     name: "The Tech Academy",
