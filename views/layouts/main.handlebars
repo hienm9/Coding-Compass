@@ -57,7 +57,7 @@
               <input
                 class="form-control mr-sm-2 searchInput"
                 type="search"
-                placeholder="Search"
+                placeholder="Search for a bootcamp"
                 aria-label="Search"
               />
               <button
@@ -85,13 +85,18 @@
           {{{body}}}
       </div>
 
-      <footer id="footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+
+    </main>
+
+          <footer
+        id="sticky-footer"
+        class="flex-shrink-0 py-4 bg-dark text-white-50"
+      >
         <div class="container text-center">
           <small>Copyright &copy; Coding-Compass</small>
         </div>
       </footer>
-
-    </main>
+      
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
     {{else}}

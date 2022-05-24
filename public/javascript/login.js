@@ -17,7 +17,7 @@ async function loginFormHandler(event) {
       if (response.ok) {
         document.location.replace('/results/');
       } else {
-        alert(response.statusText);
+        alert("The user does not exist");
       }
     }
     else {
