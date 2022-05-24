@@ -43,13 +43,13 @@
                 <a class="nav-link" href="/sign-up">Sign Up</a>
               </li>
               {{#if loggedIn}}
-              <li class="nav-item">
-                <a class="nav-link" href="/" id="logout-link">Logout</a>
-              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/" id="logout-link">Logout</a>
+                </li>
               {{else}}
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
               {{/if}}
             </ul>
 
@@ -81,18 +81,16 @@
           {{/if}}
         </nav> --}}
       </header>
-      <div class="container">
-        {{{body}}}
+      <div class="container" id="body-container">
+          {{{body}}}
       </div>
 
-      <footer
-        id="sticky-footer"
-        class="flex-shrink-0 py-4 bg-dark text-white-50"
-      >
+      <footer id="footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
         <div class="container text-center">
           <small>Copyright &copy; Coding-Compass</small>
         </div>
       </footer>
+
     </main>
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
