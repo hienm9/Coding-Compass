@@ -30,11 +30,11 @@ Bootcamp.init(
       allowNull: false,
     },
     courses: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     location: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   },

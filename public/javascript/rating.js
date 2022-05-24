@@ -2,7 +2,11 @@ $(".rating-avg").raty({
   readOnly: true,
 });
 
-$(".rating-target").html(numeral($(".rating-target").html()).format("0.0"));
+if (numeral($(".rating-target").html()).format("0.0") === "0.0") {
+  $(".rating-target").html("Not yet rated");
+} else {
+  $(".rating-target").html(numeral($(".rating-target").html()).format("0.0"));
+}
 
 async function ratingClickHandler(score, event) {
   event.preventDefault();
