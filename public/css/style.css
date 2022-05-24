@@ -1,3 +1,7 @@
+:root {
+  --primary-color: rgb(117, 28, 116);
+  --secondary-color:rgb(208, 255, 0);
+}
 html,
 body {
   height: 100%;
@@ -7,6 +11,20 @@ body {
   flex-direction: column;
 }
 
+.navbar-style {
+  background-color: var(--primary-color);
+}
+
+.navbar-brand{
+  font-weight: bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+
+}
+input.searchInput{
+  color:darkgray;
+  font-style: italic;
+}
+
 #sticky-footer {
   flex-shrink: 0;
 }
@@ -14,13 +32,7 @@ body {
 main {
   flex: 1 0 auto;
 }
-/* footer {
 
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:60px;  
- } */
  small {
      color: white;
  }
