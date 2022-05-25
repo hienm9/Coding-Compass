@@ -78,7 +78,14 @@ router.get("/results/:query", (req, res) => {
 
 router.get("/results", (req, res) => {
   Bootcamp.findAll({
-    attributes: ["id", "name", "info", "bootcamp_url", "location"],
+    attributes: ["id", "name", "info", "bootcamp_url", "location",
+    [
+      sequelize.literal(
+        "(SELECT AVG(rating_num) FROM rating WHERE rating.bootcamp_id = bootcamp.id)"
+      ),
+      "rating_avg",
+    ],
+  ],
   })
     .then((dbBootcampData) => {
       const bootcamps = dbBootcampData.map((bootcamp) =>

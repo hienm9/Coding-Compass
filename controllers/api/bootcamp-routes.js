@@ -5,7 +5,15 @@ const sequelize = require("../../config/connection");
 // get all bootcamps
 router.get("/", (req, res) => {
   Bootcamp.findAll({
-    attributes: ["id", "name", "bootcamp_url", "info"],
+    attributes: ["id", "name", "bootcamp_url", "info",
+    [
+      sequelize.literal(
+        "(SELECT AVG(rating_num) FROM rating WHERE rating.bootcamp_id = bootcamp.id)"
+      ),
+      "rating_avg",
+    ],
+  ],
+    
   })
     .then((dbBootcampData) => res.json(dbBootcampData))
     .catch((err) => {
