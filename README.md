@@ -1,5 +1,7 @@
 # Coding-Compass
 
+![](../public/assets/Screenshot%202022-05-24%20202009.png)
+
 ### A group project created with:
 - JS
 - Handlebars
