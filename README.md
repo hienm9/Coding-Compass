@@ -34,7 +34,7 @@ git clone https://github.com/hienm9/Coding-Compass
 ## Features
 
 ### Contributors
-- Hein Mai
+- Hien Mai
 - Emily Kruse
 - Motasem Diab
 - Joseph Beike
