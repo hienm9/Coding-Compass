@@ -1,5 +1,7 @@
 # Coding-Compass
 
+![](public/images/Screenshot.png)
+
 ### A group project created with:
 - JS
 - Handlebars
@@ -32,7 +34,7 @@ git clone https://github.com/hienm9/Coding-Compass
 ## Features
 
 ### Contributors
-- Hein Mai
+- Hien Mai
 - Emily Kruse
 - Motasem Diab
 - Joseph Beike
@@ -47,10 +49,6 @@ git clone https://github.com/hienm9/Coding-Compass
 
 
 ##### (*Development started in May, 2022*)
-
-
-
-
 
 
 
