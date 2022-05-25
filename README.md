@@ -1,6 +1,6 @@
 # Coding-Compass
 
-![](../public/assets/Screenshot%202022-05-24%20202009.png)
+![](public/assets/Screenshot.png)
 
 ### A group project created with:
 - JS
