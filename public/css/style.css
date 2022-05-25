@@ -1,0 +1,112 @@
+:root {
+  --primary-color: rgb(117, 28, 116);
+  --secondary-color:rgb(208, 255, 0);
+  --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display:flex;
+  flex-direction: column;
+}
+
+.navbar-style {
+  background-color: var(--primary-color);
+}
+
+.navbar-brand{
+  font-weight: bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+}
+
+.nav-link {
+  font-size: 16px;
+}
+
+#header-img {
+  width: 170px;
+  height: 40px;
+}
+
+input.searchInput{
+  color:darkgray;
+  font-style: italic;
+}
+
+.cp-title {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.cp-results{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cp-description {
+  font-weight: 300;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #1e2890;
+}
+
+.cp-detail-link {
+  color: rgb(204, 34, 178);
+  font-weight: bold;
+}
+
+.cp-detail-text {
+  color: #1e2890;
+  font-weight: bold;
+}
+
+.cp-font{
+  font-style: italic;
+  font-size: small;
+}
+
+.cp-font-comment {
+  font-style: italic;
+}
+
+.signup-link{
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+#sticky-footer {
+  flex-shrink: 0;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+ small {
+     color: white;
+ }
+
+
+ .item {
+  border: 1px solid #EEE;
+  background: #FFF;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+ 
+#pagination {
+  margin-left: 500px;
+}

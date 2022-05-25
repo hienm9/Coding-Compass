@@ -1,0 +1,57 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title"> <a href="{{bootcamp.bootcamp_url}}" target="_blank">{{bootcamp.name}}</a>&emsp; 
+    {{!-- <h5 class="card-title">
+      {{bootcamp.name}}&emsp;  --}}
+      <div class="rating-avg d-inline" data-score="{{bootcamp.rating_avg}}"></div>
+      <div class="rating-target d-inline align-middle">{{bootcamp.rating_avg}}</div>
+    </h5>
+    <p>{{bootcamp.location}}</p>
+    <h6 class="cp-detail-text">About:</h6>
+    <p class="card-text">{{bootcamp.info}}</p>
+    <h6 class="cp-detail-text">Courses offered:</h6>
+    <p>{{bootcamp.courses}}</p>
+  </div>
+</div>
+
+{{#each bootcamp.ratings as |rating|}}
+<div class="border mb-3">
+  {{{displayStars rating_num}}}
+  <p>Rated by: {{user.username}}</p>
+</div>
+{{/each}}
+
+{{#each bootcamp.comments as |comment|}}
+  <div class="border mb-3">
+    <p class="cp-font-comment">{{comment_text}}</p>
+    <p class="cp-font">Posted by: {{user.username}}</p>
+  </div>
+{{/each}}
+
+{{#if loggedIn}}
+<div>{{> rating }}</div>
+
+<div>
+  <form class="form-group comment-form">
+    <label for="comment">Comment:</label>
+    <textarea
+      name="comment-body"
+      class="form-control"
+      rows="5"
+      id="comment"
+    ></textarea>
+    <button type="submit" class="btn btn-primary">Post</button>
+    {{! <button type="submit" class="btn btn-primary">Edit</button> }}
+  </form>
+</div>
+{{else}}
+<a href="/login"><button class="btn btn-primary">Login to rate or add comment</button></a>
+
+{{/if}}
+
+<script src="/javascript/comment.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" integrity="sha512-USPCA7jmJHlCNRSFwUFq3lAm9SaOjwG8TaB8riqx3i/dAJqhaYilVnaf2eVUH5zjq89BU6YguUuAno+jpRvUqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascript/jquery.raty.js"></script>
+<script src="/javascript/rating.js"></script>

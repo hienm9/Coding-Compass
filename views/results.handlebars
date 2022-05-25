@@ -1,0 +1,22 @@
+<h3 class="cp-results">Your search results</h3>
+<div class="row item">
+{{#each bootcamps as |bootcamp|}}
+  <div class="col col-12 col-sm-6 col-lg-4">
+    <div class="card text-center mb-3">
+      <div class="card-body mb-3">
+        <h5 class="card-title"> <a href="{{bootcamp_url}}" target="_blank">{{name}}</a></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ limitText location}}</h6>
+        <p class="card-text">{{limitText info}}</p>
+        <a href="/bootcamp/{{id}}" class="stretched-link cp-detail-link"> View Ratings and Comments</a><br />
+        <div class="rating-avg d-inline" data-score="{{bootcamp.rating_avg}}"></div>
+
+      </div>
+    </div>
+  </div>
+{{/each}}
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" integrity="sha512-USPCA7jmJHlCNRSFwUFq3lAm9SaOjwG8TaB8riqx3i/dAJqhaYilVnaf2eVUH5zjq89BU6YguUuAno+jpRvUqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/javascript/jquery.raty.js"></script>
+<script src="/javascript/rating.js"></script>

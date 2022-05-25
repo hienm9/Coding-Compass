@@ -1,33 +1,33 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit">login</button>
-  </div>
-</form>
+<h2 class="cp-title">Log In</h2>
 
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
-  </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
-  </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit">signup</button>
-  </div>
-</form>
+<div class="row">
+  <div class="col-sm-8 offset-sm-2 align-self-center">
+    <form id="login-form">
+      <div class="form-group">
+        <label for="email-login">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email-login"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+        />
+        <small id="emailHelp" class="form-text text-muted">We'll never share
+          your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="password-login">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password-login"
+          placeholder="Enter your password"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Log in</button>
+ <p class="signup-link">New User?   <a href="/sign-up">Sign up to add a review or rating</a></p>    </form>
 
-<script src="/javascript/login.js"></script>
+  </div>
+</div>
+
+{{!-- <script src="/javascript/login.js"></script> --}}
